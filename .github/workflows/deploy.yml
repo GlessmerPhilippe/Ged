@@ -47,7 +47,13 @@ jobs:
         run: composer install --prefer-dist
 
       - name: Run PHPUnit
-        run: vendor/bin/phpunit --testdox
+        run: |
+            if [ -f vendor/bin/phpunit ]; then
+            vendor/bin/phpunit --testdox
+            else
+            echo "PHPUnit not found"; exit 1
+            fi
+
 
   deploy:
     name: 🚀 Deploy to Plesk

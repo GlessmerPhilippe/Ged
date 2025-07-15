@@ -9,3 +9,8 @@
 /vendor/
 ###< symfony/framework-bundle ###
 /config/gcs-key.json
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
