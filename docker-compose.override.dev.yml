@@ -1,0 +1,6 @@
+services:
+  app:
+    volumes:
+      - .:/var/www/html:cached
+      - /c/Users/gless/.ssh:/root/.ssh
+

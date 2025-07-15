@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: symfony_app
+    command: tail -f /dev/null
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=pgsql://symfony:symfony@db:5432/ged_famille
+
+  db:
+    image: postgres:15
+    container_name: pgsql_ged
+    environment:
+      POSTGRES_DB: ged_famille
+      POSTGRES_USER: symfony
+      POSTGRES_PASSWORD: symfony
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
+  app_code:
