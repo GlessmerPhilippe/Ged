@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail du document GED
+{% endblock %}
+
+{% block body %}
+	<div class="card">
+		<div class="card-header">
+			<h2>Détail du document GED #{{ ged_document.id }}</h2>
+		</div>
+		<div class="card-body">
+			<dl class="row">
+				<dt class="col-sm-3">Date</dt>
+				<dd class="col-sm-9">{{ ged_document.date ? ged_document.date|date('Y-m-d H:i:s') : '' }}</dd>
+
+				<dt class="col-sm-3">Tags</dt>
+				<dd class="col-sm-9">{{ ged_document.tags ? ged_document.tags|json_encode : '' }}</dd>
+
+				<dt class="col-sm-3">Chemin (GscPath)</dt>
+				<dd class="col-sm-9">{{ ged_document.gscPath }}</dd>
+
+				<dt class="col-sm-3">Type MIME</dt>
+				<dd class="col-sm-9">{{ ged_document.mineType }}</dd>
+
+				<dt class="col-sm-3">Créé le</dt>
+				<dd class="col-sm-9">{{ ged_document.createdAt ? ged_document.createdAt|date('Y-m-d H:i:s') : '' }}</dd>
+
+				<dt class="col-sm-3">Mis à jour le</dt>
+				<dd class="col-sm-9">{{ ged_document.updatedAt ? ged_document.updatedAt|date('Y-m-d H:i:s') : '' }}</dd>
+			</dl>
+			{% if gcs_url %}
+				<a href="{{ gcs_url }}" target="_blank" class="btn btn-success">📥 Télécharger le document</a>
+			{% else %}
+				<p class="text-danger">Aucun fichier disponible.</p>
+			{% endif %}
+		</div>
+		<div class="card-footer">
+			<a href="{{ path('app_ged_document_index') }}" class="btn btn-secondary">Retour à la liste</a>
+			<a href="{{ path('app_ged_document_edit', {'id': ged_document.id}) }}" class="btn btn-primary">Modifier</a>
+			{{ include('ged_document/_delete_form.html.twig') }}
+		</div>
+	</div>
+{% endblock %}

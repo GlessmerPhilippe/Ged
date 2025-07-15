@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit GedDocument{% endblock %}
+
+{% block body %}
+    <h1>Edit GedDocument</h1>
+
+    {{ include('ged_document/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_ged_document_index') }}">back to list</a>
+
+    {{ include('ged_document/_delete_form.html.twig') }}
+{% endblock %}

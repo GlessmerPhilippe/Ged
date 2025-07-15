@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit GedCategorie{% endblock %}
+
+{% block body %}
+    <h1>Edit GedCategorie</h1>
+
+    {{ include('ged_categorie/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_ged_categorie_index') }}">back to list</a>
+
+    {{ include('ged_categorie/_delete_form.html.twig') }}
+{% endblock %}

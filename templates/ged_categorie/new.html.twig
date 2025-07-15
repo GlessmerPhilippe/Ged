@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New GedCategorie{% endblock %}
+
+{% block body %}
+    <h1>Create new GedCategorie</h1>
+
+    {{ include('ged_categorie/_form.html.twig') }}
+
+    <a href="{{ path('app_ged_categorie_index') }}">back to list</a>
+{% endblock %}
