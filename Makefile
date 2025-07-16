@@ -24,7 +24,7 @@ ssh:
 	docker exec -it symfony_app bash
 
 serve:
-	docker exec -it symfony_app bash -c "cd /var/www/html/app && php -S 0.0.0.0:8000 -t public"
+	docker exec -it symfony_app bash -c "php -S 0.0.0.0:8000 -t public"
 gitconfig:
 	docker exec symfony_app git config --global user.email "philippeglessmer@gmail.com"
 	docker exec symfony_app git config --global user.name "Philippe GLESSMER"

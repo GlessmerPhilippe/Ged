@@ -1,8 +1,185 @@
-{% extends 'base.html.twig' %}
+{% extends 'ged-base.html.twig' %}
 
 {% block title %}Liste des documents GED{% endblock %}
 
 {% block body %}
+
+
+            <!-- Breadcrumbs -->
+            <div class="flex items-center text-sm text-gray-600 mb-6">
+                <a href="#" class="hover:text-indigo-600">Accueil</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <a href="#" class="hover:text-indigo-600">Documents</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span class="text-gray-800">Projets 2023</span>
+            </div>
+
+            <!-- Actions Bar -->
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center space-x-3">
+                    <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-sort"></i>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Document Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Document Card 1 -->
+                <div class="document-card bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+                    <div class="relative pt-[50%] bg-gray-100">
+                        <img src="https://placehold.co/800x600" alt="Document PDF Rapport annuel 2023 avec graphiques et tableaux de données" class="absolute top-0 left-0 w-full h-full object-contain p-4">
+                        <div class="absolute top-2 right-2 bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs font-medium">
+                            PDF
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-800 mb-1 truncate">Rapport annuel 2023</h3>
+                        <p class="text-xs text-gray-500 mb-2">Modifié: 15/06/2023</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-1">
+                                <img src="https://placehold.co/32x32" alt="Collaboratrice Sophie Martin" class="w-6 h-6 rounded-full border-2 border-white">
+                                <img src="https://placehold.co/32x32" alt="Collaborateur Thomas Leroy" class="w-6 h-6 rounded-full border-2 border-white">
+                            </div>
+                            <button class="text-gray-400 hover:text-indigo-600">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Card 2 -->
+                <div class="document-card bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+                    <div class="relative pt-[50%] bg-gray-100">
+                        <img src="https://placehold.co/800x600" alt="Document Word Contrat client avec texte juridique et signatures" class="absolute top-0 left-0 w-full h-full object-contain p-4">
+                        <div class="absolute top-2 right-2 bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                            DOCX
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-800 mb-1 truncate">Contrat XCorp.pdf</h3>
+                        <p class="text-xs text-gray-500 mb-2">Modifié: 10/06/2023</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-1">
+                                <img src="https://placehold.co/32x32" alt="Collaborateur Marc Dubois" class="w-6 h-6 rounded-full border-2 border-white">
+                            </div>
+                            <button class="text-gray-400 hover:text-indigo-600">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Card 3 -->
+                <div class="document-card bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+                    <div class="relative pt-[50%] bg-gray-100">
+                        <img src="https://placehold.co/800x600" alt="Document Excel Budget Q3 avec tableaux et graphiques financiers" class="absolute top-0 left-0 w-full h-full object-contain p-4">
+                        <div class="absolute top-2 right-2 bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
+                            XLSX
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-800 mb-1 truncate">Budget Q3 2023.xlsx</h3>
+                        <p class="text-xs text-gray-500 mb-2">Modifié: 05/06/2023</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-1">
+                                <img src="https://placehold.co/32x32" alt="Collaboratrice Laura Petit" class="w-6 h-6 rounded-full border-2 border-white">
+                                <img src="https://placehold.co/32x32" alt="Collaborateur Pierre Moreau" class="w-6 h-6 rounded-full border-2 border-white">
+                            </div>
+                            <button class="text-gray-400 hover:text-indigo-600">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Card 4 -->
+                <div class="document-card bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+                    <div class="relative pt-[50%] bg-gray-100">
+                        <img src="https://placehold.co/800x600" alt="Document PowerPoint Présentation stratégie marketing avec infographies" class="absolute top-0 left-0 w-full h-full object-contain p-4">
+                        <div class="absolute top-2 right-2 bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">
+                            PPTX
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-800 mb-1 truncate">Stratégie Marketing.pptx</h3>
+                        <p class="text-xs text-gray-500 mb-2">Modifié: 01/06/2023</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex -space-x-1">
+                                <img src="https://placehold.co/32x32" alt="Collaboratrice Emma Durand" class="w-6 h-6 rounded-full border-2 border-white">
+                            </div>
+                            <button class="text-gray-400 hover:text-indigo-600">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Section -->
+            <div class="bg-white rounded-lg border border-gray-200 p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-semibold text-gray-800">Activité récente</h3>
+                    <button class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">Voir tout</button>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Activity Item 1 -->
+                    <div class="flex items-start space-x-3">
+                        <img src="https://placehold.co/40x40" alt="Photo de profil Sophie Martin" class="w-8 h-8 rounded-full">
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-800">
+                                <span class="font-medium">Sophie Martin</span> a modifié <span class="font-medium">Rapport annuel 2023.pdf</span>
+                            </p>
+                            <p class="text-xs text-gray-500">Il y a 1 heure</p>
+                        </div>
+                        <button class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+
+                    <!-- Activity Item 2 -->
+                    <div class="flex items-start space-x-3">
+                        <img src="https://placehold.co/40x40" alt="Photo de profil Thomas Leroy" class="w-8 h-8 rounded-full">
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-800">
+                                <span class="font-medium">Thomas Leroy</span> a partagé <span class="font-medium">Budget Q3 2023.xlsx</span> avec vous
+                            </p>
+                            <p class="text-xs text-gray-500">Il y a 3 heures</p>
+                        </div>
+                        <button class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+
+                    <!-- Activity Item 3 -->
+                    <div class="flex items-start space-x-3">
+                        <img src="https://placehold.co/40x40" alt="Photo de profil Laura Petit" class="w-8 h-8 rounded-full">
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-800">
+                                <span class="font-medium">Laura Petit</span> a créé un nouveau dossier <span class="font-medium">Projets Clients</span>
+                            </p>
+                            <p class="text-xs text-gray-500">Hier, 15:42</p>
+                        </div>
+                        <button class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+{#
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h1>Liste des documents GED</h1>
     <a href="{{ path('app_ged_document_new') }}" class="btn btn-primary">Créer un nouveau document</a>
@@ -86,21 +263,21 @@
         <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
     </ul>
-</nav>
+</nav> #}
 
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script>
-        // Simple client-side search filter for the table
-        document.getElementById('searchInput').addEventListener('input', function() {
-            const filter = this.value.toLowerCase();
-            const rows = document.querySelectorAll('#documentTableBody tr');
-            rows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                row.style.display = text.includes(filter) ? '' : 'none';
-            });
-        });
-    </script>
+    // <script>
+    //     // Simple client-side search filter for the table
+    //     document.getElementById('searchInput').addEventListener('input', function() {
+    //         const filter = this.value.toLowerCase();
+    //         const rows = document.querySelectorAll('#documentTableBody tr');
+    //         rows.forEach(row => {
+    //             const text = row.textContent.toLowerCase();
+    //             row.style.display = text.includes(filter) ? '' : 'none';
+    //         });
+    //     });
+    // </script>
 {% endblock %}
